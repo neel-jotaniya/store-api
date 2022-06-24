@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from flask_jwt import jwt_required # for access_token
+from flask_jwt import jwt_required
 from flask import request
 
 
