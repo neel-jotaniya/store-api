@@ -1,7 +1,11 @@
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT 
+import sys
 
+if sys.version_info[:2] >= (3, 8):  # pragma: no cover
+    from collections.abc import Mapping
+    from collections import Mapping
 from sequrity import authenticate,identity
 from resources.item import Items, Itemslist
 from resources.user import Useregister
