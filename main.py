@@ -2,23 +2,17 @@ from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT 
 
-
-
 from sequrity import authenticate,identity
 from resources.item import Items, Itemslist
 from resources.user import Useregister
 
 app = Flask(__name__)
 
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sample.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key= 'super-thunder'
 
 api = Api(app)
-
-
-
 jwt = JWT(app,authenticate,identity)
 
 api.add_resource(Items,'/items/<string:name>')
