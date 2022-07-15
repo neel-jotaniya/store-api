@@ -24,7 +24,7 @@ class ItemsModel(db.Model):
     
     def delete(self):
         db.session.delete(self)
-        db.commit()
+        db.session.commit()
         
         
         
